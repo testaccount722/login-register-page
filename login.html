@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Se connecter - Login Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" href="img/user.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Chau+Philomene+One:ital@0;1&family=El+Messiri:wght@400..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"></head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    body{
+        background-color: black;
+        display: flex;
+        justify-content: center;
+        height: 100vh;
+    }
+    #contenu-back{
+        width: 90%;
+        height: 80%;
+        background-color: #E9E9E9;
+        border-radius: 20px;
+        display: flex;
+        margin: 100px;
+    }
+    #contenu-back .contenu-logo{
+        background-color: white;
+        width: 40%;
+        height: 100%;
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    #contenu-back .contenu-logo .logo0001{
+        width: 300px;
+        height: 300px;
+        background-color: black;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #contenu-back .contenu-logo .logo0001 img{
+        width: 300px;
+        height: 300px;
+    }
+    #contenu-back .contenu-logo .logo0001 img:hover{
+        width: 305px;
+        height: 305px;
+        opacity: 0.8;
+        transition: 0.5s ease;
+    }
+    #contenu-back .contenu-logo .title0001{
+        padding: 20px;
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #contenu-back .contenu-logo .title0001 h1{
+        font-family: "Chau Philomene One", sans-serif;
+        font-weight: 100;
+        font-size: 28px;
+    }
+    #contenu-back .contenu-logo .reseaux{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: auto;
+    }
+    #contenu-back .contenu-logo .reseaux a{
+        width: 50px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #contenu-back .contenu-logo .reseaux a img{
+        width: 45px;
+        height: 45px;
+        filter: invert();
+    }
+    #contenu-back .contenu-logo .reseaux a img:hover{
+        width: 48px;
+        height: 48px;
+        opacity: 0.8;
+        transition: 0.1s ease;
+    }
+    #contenu-back .contenu-write{
+        width: 60%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #contenu-back .contenu-write .write-element{
+        width: 80%;
+        height: auto;
+    }
+    #contenu-back .contenu-write .write-element h1{
+        font-family: "Chau Philomene One", sans-serif;
+        font-weight: 100;
+        font-size: 60px;
+        line-height: 50px;
+    }
+    #contenu-back .contenu-write .write-element .soustitre{
+        font-family: "Poppins", sans-serif;
+        font-size: 20px;
+        color: rgb(121, 121, 121);
+    }
+    #contenu-back .contenu-write .write-element form{
+        width: 100%;
+    }
+    #contenu-back .contenu-write .write-element form .username,#contenu-back .contenu-write .write-element form .password{
+        width: 450px;
+        height: 50px;
+        border-radius: 5px;
+        border: 0;
+        margin-top: 20px;
+        box-shadow: 6px 5px 5px 0px rgba(0, 0, 0, 0.1);
+    }
+    #contenu-back .contenu-write .write-element form .username{
+        background: url('img/user.png') no-repeat 20px center; 
+        background-size: 20px 20px;
+        padding-left: 50px;
+        font-size: 16px;
+        border-radius: 5px;
+        background-color: white;
+    }
+    #contenu-back .contenu-write .write-element form .password{
+        background: url('img/password.png') no-repeat 20px center;
+        background-size: 20px 20px;
+        padding-left: 50px;
+        font-size: 16px;
+        border-radius: 5px;
+        background-color: white;
+    }
+    #contenu-back .contenu-write .write-element form .input-links{
+        width: 500px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 10px;
+        font-family: "Poppins", sans-serif;
+    }
+    #contenu-back .contenu-write .write-element form .input-links a{
+        color: black;
+        font-size: 12px;
+    }
+    #contenu-back .contenu-write .write-element form .input-links div{
+        display: flex;
+        font-size: 12px;
+        color: rgb(82, 82, 82);
+    }
+    #contenu-back .contenu-write .write-element form .input-links div input{
+        margin-right: 5px;
+    }
+    #contenu-back .contenu-write .write-element form .username:focus,#contenu-back .contenu-write .write-element form .password:focus {
+        outline: none;
+        box-shadow: 6px 5px 15px 10px rgba(0, 0, 0, 0.1);
+        transition: 0.5s ease;
+    }
+    #contenu-back .contenu-write .write-element form button{
+        width: 500px;
+        height: 50px;
+        margin-top: 10px;
+        background-color: black;
+        color: white;
+        font-family: "Chau Philomene One", sans-serif;
+        font-weight: 100;
+        font-size: 20px;
+        border-radius: 5px;
+    }
+    #contenu-back .contenu-write .write-element form button:hover{
+        font-size: 19px;
+        background-color: rgb(26, 26, 26);
+        transition: 0.2s ease;
+    }
+    #contenu-back .contenu-write .write-element form .goregister{
+        margin-top: 5px;
+        font-family: "Poppins", sans-serif;
+        font-size: 15px;
+    }
+    #contenu-back .contenu-write .write-element form .goregister a{
+        color: rgb(0, 49, 155);
+    }
+    #notification-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: auto;
+    background-color: #da838a;
+    border: 1px solid #f5c2c7;
+    font-family: "Poppins", sans-serif;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    display: none;
+    overflow: auto;
+    max-height: 300px;
+    color: rgb(100, 5, 5);
+}
+#notification-container ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+#notification-container ul li {
+    margin-bottom: 10px;
+    font-size: 16px;
+    padding: 5px;
+    font-family: "Chau Philomene One", sans-serif;
+    font-weight: 100;
+    animation: fadeIn 0.3s ease-in-out;
+    
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@media (max-width: 1150px){
+    #contenu-back .contenu-logo .logo0001{
+        width: 200px;
+        height: 200px;
+    }
+    #contenu-back .contenu-logo .logo0001 img{
+        width: 200px;
+        height: 200px;
+    }
+    #contenu-back .contenu-logo .logo0001 img:hover{
+        width: 205px;
+        height: 205px;
+        opacity: 0.8;
+        transition: 0.5s ease;
+    }
+    #contenu-back .contenu-logo .title0001 h1{
+        font-size: 22px;
+    }
+    #contenu-back .contenu-logo .reseaux a{
+        width: 40px;
+        height: 40px;
+    }
+    #contenu-back .contenu-logo .reseaux a img{
+        width: 35px;
+        height: 35px;
+    }
+    #contenu-back .contenu-logo .reseaux a img:hover{
+        width: 38px;
+        height: 38px;
+    }
+    #contenu-back .contenu-write{
+        width: 60%;
+        height: auto;
+    }
+    #contenu-back .contenu-write .write-element{
+        width: 100%;
+        height: auto;
+        text-align: center;
+    }
+    #contenu-back .contenu-write .write-element h1{
+        font-size: 35px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    #contenu-back .contenu-write .write-element .soustitre{
+        font-size: 13px;
+        width: 100%;
+    }
+    #contenu-back .contenu-write .write-element form .username,#contenu-back .contenu-write .write-element form .password{
+        width: 80%;
+        box-sizing: border-box;
+    }
+    input::placeholder{
+        font-size: 14px;
+    }
+    #contenu-back .contenu-write .write-element form{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    #contenu-back .contenu-write .write-element form .input-links{
+        width: 80%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    #contenu-back .contenu-write .write-element form button{
+        width: 80%;
+        font-size: 16px;
+    }
+    #contenu-back .contenu-write .write-element form button:hover{
+        font-size: 18px;
+        background-color: rgb(26, 26, 26);
+        transition: 0.2s ease;
+    }
+    #contenu-back .contenu-write .write-element form .goregister{
+        font-size: 12px;
+    }
+}
+@media (max-width: 768px) {
+    #contenu-back .contenu-logo{
+        display: none;
+    }
+    #contenu-back{
+        height: 50vh;
+        margin: 0;
+        margin-top: 25vh;
+    }
+    #contenu-back .contenu-write{
+        width: 100%;
+        height: auto;
+    }
+    #contenu-back .contenu-write .write-element{
+        width: 100%;
+        height: auto;
+        text-align: center;
+    }
+    #contenu-back .contenu-write .write-element h1{
+        font-size: 48px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    #contenu-back .contenu-write .write-element .soustitre{
+        font-size: 16px;
+        width: 100%;
+    }
+    #contenu-back .contenu-write .write-element form .username,#contenu-back .contenu-write .write-element form .password{
+        width: 80%;
+        box-sizing: border-box;
+    }
+    input::placeholder{
+        font-size: 14px;
+    }
+    #contenu-back .contenu-write .write-element form .input-links{
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    #contenu-back .contenu-write .write-element form button{
+        width: 80%;
+        font-size: 16px;
+    }
+    #contenu-back .contenu-write .write-element form button:hover{
+        font-size: 18px;
+        background-color: rgb(26, 26, 26);
+        transition: 0.2s ease;
+    }
+    #contenu-back .contenu-write .write-element form .goregister{
+        font-size: 15px;
+    }
+}
+@media (max-width: 480px) {
+    #contenu-back .contenu-logo{
+        display: none;
+    }
+    #contenu-back{
+        height: 50vh;
+        margin: 0;
+        margin-top: 25vh;
+    }
+    #contenu-back .contenu-write{
+        width: 100%;
+        height: auto;
+    }
+    #contenu-back .contenu-write .write-element{
+        width: 100%;
+        height: auto;
+        text-align: center;
+    }
+    #contenu-back .contenu-write .write-element h1{
+        font-size: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    #contenu-back .contenu-write .write-element .soustitre{
+        font-size: 12px;
+        width: 100%;
+    }
+    #contenu-back .contenu-write .write-element form .username,#contenu-back .contenu-write .write-element form .password{
+        width: 80%;
+        box-sizing: border-box;
+    }
+    input::placeholder{
+        font-size: 12px;
+    }
+    #contenu-back .contenu-write .write-element form .input-links{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    #contenu-back .contenu-write .write-element form button{
+        width: 80%;
+        font-size: 15px;
+    }
+    #contenu-back .contenu-write .write-element form button:hover{
+        font-size: 16px;
+        background-color: rgb(26, 26, 26);
+        transition: 0.2s ease;
+    }
+    #contenu-back .contenu-write .write-element form .goregister{
+        font-size: 12px;
+    }
+}
+
+</style>
+<body>
+    <div id="contenu-back">
+        <div class="contenu-write">
+            <div class="write-element">
+                <h1>SE CONNECTER</h1>
+                <p class="soustitre">Accédez à votre espace personnalisé</p>
+                <form class="write-inputs" method="post" action="">
+                    <input class="username" name="username" type="text" placeholder="Nom d'utilisateur" required>
+                    <input class="password" name="password" type="password" placeholder="Mot de passe" required>
+                    <div class="input-links">
+                        <div>
+                            <input type="checkbox">
+                            <p>Me rappeler de moi</p>
+                        </div>
+                        <a href="#">Mot de passe oublié ?</a>
+                    </div>
+                    <button type="submit">CONNECTER</button>
+                    <p class="goregister">Vous n'avez pas de compte ? <a href="register.html">Inscrivez-vous !</a></p>
+                </form>
+            </div>
+        </div>
+        <div class="contenu-logo">
+            <div class="logo0001">
+                <img src="img/logowhite.png">
+            </div> 
+            <div class="title0001"><h1>Rejoignez-nous !</h1></div>
+            <div class="reseaux">
+                <a href="#"><img src="img/facebook.png"></a>
+                <a href="#"><img src="img/github.png"></a>
+                <a href="#"><img src="img/instagram.png"></a>
+                <a href="#"><img src="img/twitter.png"></a>
+                <a href="#"><img src="img/e-mail.png"></a>
+            </div>
+        </div>
+    </div>
+    <div id="notification-container"></div>
+    <script>
+        function showNotification(message) {
+            const notificationContainer = document.getElementById('notification-container');
+            notificationContainer.style.backgroundColor = '#f8d7da';
+            notificationContainer.style.borderColor = '#f5c2c7';
+            notificationContainer.style.color = '#721c24';
+            const notificationItem = document.createElement('li');
+            notificationItem.textContent = message;
+            const notificationList = notificationContainer.querySelector('ul');
+            if (!notificationList) {
+                const ul = document.createElement('ul');
+                ul.appendChild(notificationItem);
+                notificationContainer.appendChild(ul);
+            } else {
+                notificationList.appendChild(notificationItem);
+            }
+            notificationContainer.style.display = 'block';
+            setTimeout(() => {
+                notificationItem.remove();
+                if (!notificationContainer.querySelector('ul').childElementCount) {
+                    notificationContainer.style.display = 'none';
+                }
+            }, 5000);
+        }
+    
+        function validateForm() {
+            const username = document.querySelector('.username').value.trim();
+            const password = document.querySelector('.password').value;
+            const notificationContainer = document.getElementById('notification-container');
+            notificationContainer.innerHTML = '';
+            let isValid = true;
+            if (!username.match(/^[a-zA-Z0-9_]{3,15}$/)) {
+                showNotification("Nom d'utilisateur invalide.");
+                isValid = false;
+            }
+            if (password.length < 8 || !/[A-Z]/.test(password) || !/[a-z]/.test(password) || !/[0-9]/.test(password)) {
+                showNotification("Mot de passe invalide.");
+                isValid = false;
+            }
+            return false;
+        }
+            document.querySelector('form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            validateForm();
+        });
+    </script>
+</body>
+</html>
